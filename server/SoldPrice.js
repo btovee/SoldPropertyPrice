@@ -11,8 +11,7 @@ const SOLD_PRICE_GROUPS = {
 
 class SoldPrice {
 
-  getDataSet(fileName, callback = () => {
-  }) {
+  getDataSet(fileName, callback = () => {}) {
     this.readSoldPriceDataFromFile(fileName, (fileData) => {
       const parsedData = this.parseSoldPriceData(fileData);
       const filteredData = this.filterRelevantData(parsedData);
@@ -43,10 +42,9 @@ class SoldPrice {
    * @return {object} The range of the specified numbers.
    */
   getRange(numbers) {
-    numbers.sort();
     return {
-      lowest: numbers[0],
-      highest: numbers[numbers.length - 1]
+      lowest: Math.min(...numbers),
+      highest: Math.max(...numbers)
     };
   }
 
@@ -103,8 +101,6 @@ class SoldPrice {
         && price <= highestPrice
       ) {
         soldPriceDataInGroups[SOLD_PRICE_GROUPS['95_100']].push(soldPriceDatum);
-      } else {
-        console.log(soldPriceDatum);
       }
     });
 
@@ -130,18 +126,29 @@ class SoldPrice {
   }
 
   parseSoldPriceData(data) {
-    return data
-    // Split on new line
+    let returnDataSet = [];
+    data
+      // Split on new line
       .split(/\r?\n/)
-      .map((dataItem) => {
+      .forEach((dataItem) => {
         // Split on spaces
         const soldPriceDatum = dataItem.split(" ");
-        return {
-          x: parseInt(soldPriceDatum[0]),
-          y: parseInt(soldPriceDatum[1]),
-          p: parseInt(soldPriceDatum[2])
+        const x = parseInt(soldPriceDatum[0]);
+        const y = parseInt(soldPriceDatum[1]);
+        const price = parseInt(soldPriceDatum[2]);
+        if(
+          !isNaN(x) &&
+          !isNaN(y) &&
+          !isNaN(price)
+        ) {
+          returnDataSet.push({
+            x: x,
+            y: y,
+            p: price
+          });
         }
-      })
+      });
+    return returnDataSet;
   }
 
   filterRelevantData(soldPriceData) {

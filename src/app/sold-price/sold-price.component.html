@@ -1,9 +1,11 @@
-<div>
-  <canvas baseChart
-          [datasets]="soldPriceChartData"
-          [labels]="soldPriceChartLabels"
-          [chartType]="'scatter'"
-          [colors]="soldPriceChartColors"
-          [options]="toolTipOptions"
-  ></canvas>
+<div class="row">
+  <div class="col-lg-12 text-center">
+    <h3 class="mt-5">Sold Property Prices</h3>
+    <canvas baseChart
+            [datasets]="soldPriceChartData"
+            [labels]="soldPriceChartLabels"
+            [chartType]="'scatter'"
+            [colors]="soldPriceChartColors"
+    ></canvas>
+  </div>
 </div>

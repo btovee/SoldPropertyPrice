@@ -6,11 +6,13 @@ import { AppComponent } from './app.component';
 import { SoldPriceComponent } from './sold-price/sold-price.component';
 import {HttpClientModule} from '@angular/common/http';
 import { ChartsModule } from 'ng2-charts-x';
+import { NavBarComponent } from './nav-bar/nav-bar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SoldPriceComponent
+    SoldPriceComponent,
+    NavBarComponent
   ],
   imports: [
     BrowserModule,
