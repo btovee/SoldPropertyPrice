@@ -33,7 +33,7 @@ For back-end or terminal solutions, how you represent colour for each point is u
 - Backend:
     - NodeJs with express, calculating the groups and returning a JSON response.
     
-## server
+## Server
 
 - Run `npm run start` then navigate to `http://localhost:8080/`.  
 - The API is located at `http://localhost:8080/api/sold-price`.
@@ -43,3 +43,10 @@ For back-end or terminal solutions, how you represent colour for each point is u
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
 ## Link To App
+[https://still-garden-58523.herokuapp.com/](https://still-garden-58523.herokuapp.com/)
+
+## Improvements 
+- Due Keeping to the 2 hour time constraint, tests are missing. 
+- End to end tests need to be written:
+    - Unit tests
+    - Behavioural Tests
