@@ -35,16 +35,16 @@ enum SoldPriceColors {
 export class SoldPriceComponent implements OnInit {
   @ViewChild(BaseChartDirective) chart: BaseChartDirective;
 
-  private soldPriceChartData: ChartDataSets[] = [
+  public soldPriceChartData: ChartDataSets[] = [
     {
       data: [],
       label: ''
     }
   ];
 
-  private soldPriceChartLabels = [];
+  public soldPriceChartLabels = [];
 
-  private soldPriceChartColors = [];
+  public soldPriceChartColors = [];
 
   private updateChart() {
     this.chart.ngOnChanges({});

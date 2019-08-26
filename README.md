@@ -41,3 +41,5 @@ For back-end or terminal solutions, how you represent colour for each point is u
 ## Build
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+
+## Link To App
