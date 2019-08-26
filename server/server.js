@@ -6,7 +6,8 @@ const app = express();
 app.use(bodyParser.json());
 
 // Create link to Angular build directory
-const distDir = __dirname + "/dist/";
+const distDir = __dirname + "/../dist/mean-app/";
+console.log(distDir);
 app.use(express.static(distDir));
 
 

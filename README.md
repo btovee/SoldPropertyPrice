@@ -1,27 +1,43 @@
-# MeanApp
+# Sold Price Map Web App
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.3.
+## Problem
 
-## Development server
+You have been given a set of data points, with each item taking the following form:
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+```
+X Y P
+```
 
-## Code scaffolding
+Where:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- `0 <= X < 100`
+- `0 <= Y < 100`
+- `10000 < P < 10000000`
+
+`X` and `Y` represent the coordinates of a house which has been sold, and `P` is the price in which it was sold. For example, the point "`5 10 100000`" would be interpreted as a house sold for £100,000 at the point `(5, 10)`.
+
+Using this data plot each point on a grid. The points should be filled with a colour representing how expensive a house was in relation to other houses. The choice of colour is up to you, however, you should use a different colour for each of the following groups:
+
+- 0% - 5%
+- 5% - 25%
+- 25% - 75%
+- 75% - 95%
+- 95% - 100%
+
+For back-end or terminal solutions, how you represent colour for each point is up to you.
+
+## Solution
+
+- Frontend:
+    - Angular with chartJs for drawing a scatter plot of the X and Y coordinates.
+- Backend:
+    - NodeJs with express, calculating the groups and returning a JSON response.
+    
+## server
+
+- Run `npm run start` then navigate to `http://localhost:8080/`.  
+- The API is located at `http://localhost:8080/api/sold-price`.
 
 ## Build
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
