@@ -29,7 +29,8 @@ For back-end or terminal solutions, how you represent colour for each point is u
 ## Solution
 
 - Frontend:
-    - Angular with chartJs for drawing a scatter plot of the X and Y coordinates.
+    - Angular view and calling API.
+    - chartJs for drawing a scatter plot of the coordinates.
 - Backend:
     - NodeJs with express, calculating the groups and returning a JSON response.
     
@@ -46,7 +47,7 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 [https://still-garden-58523.herokuapp.com/](https://still-garden-58523.herokuapp.com/)
 
 ## Improvements 
-- Due Keeping to the 2 hour time constraint, tests are missing. 
-- End to end tests need to be written:
+- Due keeping to the 2 hour time constraint, tests are missing. 
+- Ideally end to end tests need to be written:
     - Unit tests
     - Behavioural Tests
